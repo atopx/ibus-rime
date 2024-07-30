@@ -29,7 +29,8 @@ global_ascii: false                        # 切换为 ascii 模式时，是否�
 # 字体；候选项、候选窗口的行为、布局及样式
 style:
   color_scheme: mint_light_blue             # 默认配色方案
-  color_scheme_dark: mint_dark_blue         # 深色模式下，Weasel 的配色方案，Windows 10 1809+ 可用
+  #color_scheme_dark: mint_dark_blue         # 深色模式下，Weasel 的配色方案，Windows 10 1809+ 可用
+  color_scheme_dark: steam         # 深色模式下，Weasel 的配色方案，Windows 10 1809+ 可用
 
   # 全局字体
   # 格式：字体1:起始码位:结束码位:字重:字形,字体2……，字体会依次 fallback
@@ -45,8 +46,8 @@ style:
   preedit_type: composition                # 预编辑区内容：composition（编码）； preview（选中的候选）；preview_all（全部候选）
   
   fullscreen: false                        # 候选窗口全屏显示：true；false
-  vertical_text: false                     # 竖排文本：true；false
-  # text_orientation: horizontal           # 文本排列方向，效果和 `vertical_text` 相同：horizontal；vertical
+  vertical_text: true                      # 竖排文本：true；false
+  text_orientation: vertical               # 文本排列方向，效果和 `vertical_text` 相同：horizontal；vertical
   candidate_list_layout: stacked           # stacked | linear  候选项排列方向（似乎只有在custom内才可以生效）
   horizontal: false                        # 候选项水平排列（在custom内和andidate_list_layout的linear效果一样）
   vertical_text_left_to_right: false       # 竖排方向是否从左到右：true；false
@@ -87,7 +88,7 @@ style:
     shadow_offset_y: 4                     # 阴影上下偏移距离
     corner_radius: 8                       # 候选窗口圆角半径
     round_corner: 8                        # 候选背景色块圆角半径，又名 hilited_corner_radius
-    # type: vertical                       # 布局设置，效果和 style 下的设置相同：
+    type: vertical                       # 布局设置，效果和 style 下的设置相同：
                                            # horizontal（横向）；vertical（竖向） ; vertical_text（竖排文本） ; vertical+fullscreen（全屏） ; horizontal+fullscreen（横向全屏）
 # [End of <style>]
 
@@ -207,7 +208,7 @@ preset_color_schemes:
     translucency: true                      # 磨砂： false | true
     mutual_exclusive: false                 # 色不叠加： false | true
     candidate_list_layout: stacked
-    text_orientation: horizontal
+    text_orientation: vertical
     color_space: srgb
     back_color: 0xEFEFEF                    # 底色
     candidate_text_color: 0x323232          # 文字颜色
@@ -228,7 +229,7 @@ preset_color_schemes:
     translucency: true                      # 磨砂： false | true
     mutual_exclusive: false                 # 色不叠加： false | true
     candidate_list_layout: stacked
-    text_orientation: horizontal
+    text_orientation: vertical
     color_space: srgb
     back_color: 0x323232                    # 底色
     candidate_text_color: 0xE8E8E8          # 文字颜色
