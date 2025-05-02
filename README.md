@@ -9,12 +9,40 @@
 ## 安装
 
 ```bash
-sudo apt install -y ibus-rime
-mkdir -p $HOME/.config/ibus
-git clone git@github.com:atopx/ibus-rime.git $HOME/.config/ibus/ibus
+sudo apt update
+sudo apt install -y fcitx5 fcitx5-chinese-addons fcitx5-frontend-gtk3 fcitx5-frontend-gtk4 fcitx5-frontend-qt5 fcitx5-module-cloudpinyin fcitx5-rime
+im-config -n fcitx5
+
+echo "GTK_IM_MODULE DEFAULT=fcitx5" >> ~/.pam_environment
+echo "QT_IM_MODULE DEFAULT=fcitx5" >> ~/.pam_environment
+echo "XMODIFIERS DEFAULT=\@im=fcitx5" >> ~/.pam_environment
+echo "SDL_IM_MODULE DEFAULT=fcitx5" >> ~/.pam_environment
+
+mkdir -p $HOME/.local/share/fcitx5
+git clone -b fcitx5 git@github.com:atopx/ibus-rime.git $HOME/.local/share/fcitx5/rime --depth 1
+
 ```
 
-## 启用rime
 
-设置 -> 键盘 -> 输入源 -> 添加输入源 -> 中文(Rime)
-Settings -> Keyboard -> Input Source -> Add Input Source -> Chinese(Rime)
+## 需要注销/重新登录
+
+```bash
+fcitx5-configtool # 从右侧可用输入法中选择“中州韵” 添加到左侧
+```
+
+## 全局选项选项配置
+
+输入法选择
+![alt text](docs/image1.png)
+
+
+快捷键配置
+![alt text](docs/image2.png)
+
+
+主题/字体配置
+![alt text](docs/image3.png)
+
+## 部署
+
+输入法托盘菜单点击重新启动，等待自动部署
