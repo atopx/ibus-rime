@@ -46,3 +46,7 @@ fcitx5-configtool # 从右侧可用输入法中选择“中州韵” 添加到�
 ## 部署
 
 输入法托盘菜单点击重新启动，等待自动部署
+
+## 自启动
+
+![alt text](docs/image4.png)
